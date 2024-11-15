@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add scroll margin for fixed headers if needed */
+section {
+  scroll-margin-top: 2rem;
+}
+
+/* Ensure proper height and scrolling */
+html, body, #root {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add some global styles */
+@layer base {
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+/* Add form input styles */
+@layer components {
+  input, textarea {
+    @apply border-gray-300 rounded-md shadow-sm;
+  }
+  
+  input:focus, textarea:focus {
+    @apply ring-2 ring-indigo-500 border-indigo-500;
+  }
+}
